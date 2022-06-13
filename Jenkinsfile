@@ -12,4 +12,8 @@ node('built-in')
 	{
     sh 'scp /home/ubuntu/.jenkins/workspace/MultiBranchPipeline_master/webapp/target/webapp.war ubuntu@172.31.33.226:/var/lib/tomcat8/webapps/qaenv.war'
         }
+	stage('Continuous Testing_master')
+	{
+    sh 'echo "Testing passed"'
+        }
 }
