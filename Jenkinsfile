@@ -16,5 +16,9 @@ node('built-in')
         {
     sh 'echo "Testing passed"'
         }
+	stage('Continuous Deployment_loans') 
+	{
+    sh 'scp /home/ubuntu/.jenkins/workspace/MultiBranchPipeline_master/webapp/target/webapp.war ubuntu@172.31.42.160:/var/lib/tomcat8/webapps/prodenv.war' 
+        }
 
 }	
