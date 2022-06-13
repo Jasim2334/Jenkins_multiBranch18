@@ -8,4 +8,8 @@ node('built-in')
 	{
     sh label: '', script: 'mvn package'
 	}
+	stage('Continuous Download_master')
+	{
+    scp /home/ubuntu/.jenkins/workspace/MultiBranchPipeline_master/webapp/target/webapp.war ubuntu@172.31.33.226:/var/lib/tomcat8/webapps/qaenv.war
+        }
 }
